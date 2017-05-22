@@ -1,4 +1,4 @@
-package org.fogbeam.example.opennlp.tests.org.fogbeam.example.opennlp.tests;
+package org.fogbeam.example.opennlp.tests;
 
 import junit.framework.TestCase;
 import org.fogbeam.example.opennlp.dinesh.StringTokenizer;
