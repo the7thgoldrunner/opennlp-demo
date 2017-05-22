@@ -21,6 +21,12 @@ public class TokenizerMain {
         }
 	}
 
+    /**
+     * Method for reading {@link String}s from a file.
+     *
+     * @param filePath path to the file we want to read from where the app is executed.
+     * @return a {@link String} with the contents of the file, which might be empty.
+     */
 	private static String readStringFromFile(final String filePath) {
 
         String fileContents = "";

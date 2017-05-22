@@ -13,10 +13,20 @@ public final class StringTokenizer {
 
     private static final String ENGLISH_MODEL_PATH = "models/en-token.model";
 
+    /**
+     * Singleton class.
+     *
+     * We don't want this class to be instanced.
+     */
     private StringTokenizer() {
         // Singleton
     }
 
+    /**
+     * Call this method if you'd like to have a {@link String}s contents split into tokens.
+     *
+     * @param s the {@link String} you'd like to tokenize.
+     */
     public static void tokenize(final String s) {
 
         InputStream modelIn = null;
