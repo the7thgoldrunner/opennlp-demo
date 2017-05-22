@@ -27,18 +27,21 @@ public final class StringTokenizer {
      *
      * @param s the {@link String} you'd like to tokenize.
      */
-    public static void tokenize(final String s) {
+    public static String[] tokenize(final String s) {
 
         InputStream modelIn = null;
+        String[] tokens = new String[0];
+
+        String inputString = s;
+        if (inputString == null) {
+            inputString = "";
+        }
         try {
             modelIn = new FileInputStream(StringTokenizer.ENGLISH_MODEL_PATH);
             TokenizerModel model = new TokenizerModel( modelIn );
             Tokenizer tokenizer = new TokenizerME(model);
 
-            String[] tokens = tokenizer.tokenize(s);
-            for(String token : tokens) {
-                System.out.println( token );
-            }
+            tokens = tokenizer.tokenize(inputString);
         } catch (final FileNotFoundException e) {
             e.printStackTrace();
         } catch (final IOException ioe) {
@@ -51,7 +54,8 @@ public final class StringTokenizer {
                     e.printStackTrace();
                 }
             }
-            System.out.println( "\n-----\ndone" );
         }
+
+        return tokens;
     }
 }

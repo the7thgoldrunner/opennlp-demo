@@ -11,13 +11,15 @@ public class TokenizerMain {
 
 	    if (args.length > 0) {
 	        for (final String filePath : args) {
-	            StringTokenizer.tokenize(readStringFromFile(filePath));
+	            String[] tokens = StringTokenizer.tokenize(readStringFromFile(filePath));
+
+	            for(String token : tokens) {
+                    System.out.println( token );
+                }
+                System.out.println( "\n-----\ndone" );
             }
         } else {
-	        // Demo mode.
-            StringTokenizer.tokenize( "A ranger journeying with Oglethorpe, founder of the Georgia Colony, "
-                    + " mentions \"three Mounts raised by the Indians over three of their Great Kings"
-                    + " who were killed in the Wars.\"");
+            System.out.println( "Sorry! We were expecting input arguments to the desired files :(\n" );
         }
 	}
 
